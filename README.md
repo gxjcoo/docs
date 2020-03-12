@@ -1,2 +1,2 @@
-# staticblog
-基于vuepress的博客
+# docs
+基于vuepress的文档
