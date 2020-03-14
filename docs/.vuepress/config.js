@@ -21,7 +21,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    base:"/docs/",
+    base:'/docs/',
     repo: '',
     editLinks: false,
     docsDir: '',
