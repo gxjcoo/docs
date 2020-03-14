@@ -1,0 +1,21 @@
+{
+  "name": "docs",
+  "version": "0.0.1",
+  "description": "基于vuepress的技术文档",
+  "main": "index.js",
+  "authors": {
+    "name": "",
+    "email": "gxjcoo@gmail.com"
+  },
+  "repository": "/docs",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.0.0",
+    "@vuepress/plugin-back-to-top": "^1.0.0",
+    "@vuepress/plugin-medium-zoom": "^1.0.0"
+  }
+}
