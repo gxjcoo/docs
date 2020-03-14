@@ -7,7 +7,7 @@ set -e
 yarn build
 
 # 进入生成的文件夹
-cd docs/.vuepress/dist
+cd ./.vuepress/dist
 
 
 #创建.nojekyll 防止Github Pages build错误
@@ -29,8 +29,6 @@ git push -f git@github.com:gxjcoo/docs.git master:gh-pages
 
 
 # 提交代码至git仓库
-
-git pull 
 
 git add .
 
