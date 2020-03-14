@@ -1,5 +1,4 @@
 {
-
   "name": "docs",
   "version": "0.0.1",
   "description": "基于vuepress的技术文档",
@@ -16,5 +15,8 @@
   "license": "MIT",
   "devDependencies": {
     "vuepress": "^1.0.0-rc.1"
+  },
+  "dependencies": {
+    "@vuepress/theme-default": "^1.0.0-rc.1"
   }
 }
