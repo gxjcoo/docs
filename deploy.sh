@@ -10,7 +10,7 @@ npm run build
 cd docs/.vuepress/dist
 
 # 如果是发布到自定义域名
-# echo 'www.example.com' > CNAME
+echo 'www.gxjcoo.com' > CNAME
 
 git init
 git add -A
@@ -28,7 +28,7 @@ pwd
 
 git add .
 
-git commit -m "upd"
+git commit -m "自动化部署，本次提交无关键信息"
 
 git push
 
