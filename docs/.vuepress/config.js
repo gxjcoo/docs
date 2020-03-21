@@ -23,6 +23,11 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
+      // 备案
+      record: '浙ICP备‪20004092‬号-1 ',
+      recordLink: 'http://www.beian.miit.gov.cn/',
+      // cyberSecurityRecord: '公安部备案文案',
+      // cyberSecurityLink: '公安部备案指向链接',
     repo: '',
     editLinks: true,
     docsDir: '',
