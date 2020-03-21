@@ -3,7 +3,7 @@ module.exports = {
 
   title: '风轻日暖',
   description: "风轻不寒，日暖不燥。适合coding",
-  base:'/docs/',
+  // base:'/docs/',
   theme: 'reco',
   /**
    * Extra tags to be injected to the page HTML `<head>`
