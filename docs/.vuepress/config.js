@@ -48,5 +48,31 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'right',
+        defaultTitle: '',
+      },
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'theorem',
+        before: info => `<div class="theorem"><p class="title">${info}</p>`,
+        after: '</div>',
+      },
+    ],
+
+    // 这是 VuePress 默认主题使用这个插件的方式
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'tip',
+        defaultTitle: {
+          '/zh/': '提示',
+        },
+      },
+    ],
   ]
 }
