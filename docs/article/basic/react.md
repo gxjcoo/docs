@@ -540,3 +540,46 @@ function sum(x: number , y: number){
 }
 sum(x:1,y:2)
 ```
+### react中使用TS
+- state props
+- dom事件
+- 生命周期
+
+```TS
+import * as React from 'react;
+interface IProps{
+  name:string
+}
+interface IState{
+  value : number
+}
+class App extends React.Component<IProps,IState>{
+  public constructor(props: IProps){
+    super(props)
+    this.state = {
+      value : '10'
+    }
+  }
+  render(){
+    const { name } = this.props
+    const {value} = this.state
+    return (
+      <div>
+       hello TS {name} {value}
+       <input value={this.state.value} onChange ={(e:ChangeEvent<HTMLInputElement>)=>{
+         this.setState(state:{
+           value:e.target.value
+         })
+       }} />
+       <button onClick = {(e:React.MouseEvent<HTMLButtonEvent>)=>{
+         alert('hello')
+       }}>btn</button>
+      </div>
+    )
+  }
+  public componentDidMount:(){
+    console.log('mounted')
+  }
+}
+export default App
+```

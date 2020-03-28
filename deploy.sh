@@ -28,7 +28,7 @@ set -e
 
 git add .
 
-git commit -m "hook + TS"
+git commit -m "TS"
 
 git push
 
