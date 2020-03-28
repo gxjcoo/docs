@@ -28,7 +28,7 @@ set -e
 
 git add .
 
-git commit -m "react 基础知识点"
+git commit -m "hook + TS"
 
 git push
 

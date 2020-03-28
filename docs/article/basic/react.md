@@ -326,13 +326,217 @@ function getData() {
 
 :::
 
+### 普通组件
+
+```jsx
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import "***.css";
+class Icon extends Component {
+  static propTypes = {
+    name: PropTypes.string
+  };
+  static defaultProps = {
+    name: "icon"
+  };
+  render() {
+    return <span className={`icon-${name}`}></span>;
+  }
+}
+export default Icon;
+```
+
+### 受控组件与非受控组件
+
+- 针对于表单组件的概念
+- 受控组件(表单数据与组件状态严格绑定)：
+
+```js
+<input
+  value={this.state.value}
+  onChange={e => {
+    this.setState({
+      value: e.target.value
+    });
+  }}
+/>
+```
+
+- 非受控组件：
+
+```js
+<input
+  defaultValue={this.state.value}
+  onChange={e => {
+    //随意
+  }}
+/>
+```
 
 ::: tip
 
-## 小练习
+## 高阶组件
 
 :::
 
-### 封装功能组件 loading
+### 属性代理
 
-### todolist
+### 反向继承
+
+::: tip
+
+## Reacthooks
+
+函数是组件使用数据(state,props)，生命周期等
+
+:::
+
+> useState -- state<br/>
+> useEffect -- 生命周期<br/>
+> useReducer -- redux<br/>
+> custom hook -- 自定义 hook<br/>
+
+### 函数式组件
+
+```jsx
+//没有js逻辑时可以使用=>单行默认return
+const App = () => <div>react</div>;
+//or
+const APP = () => {
+  return <div>react</div>;
+};
+export default App;
+```
+
+### props
+
+```jsx
+const APP = props => {
+  return <div>{props}</div>;
+};
+export default App;
+```
+
+### state
+
+> 1.所有数据必须定义到函数的顶部 <br/> 2.不要有 if 等条件判断
+
+```jsx
+improt {useState} from 'react'
+const APP = () =>{
+  let [num,setNum] = useState(0)
+  return(
+    <div>{num}
+    <button onClick={(e)=>setName(num+1)}>add</button>
+    </div>
+  )
+}
+export default App
+```
+
+### 生命周期
+
+- 1 默认情况下 useEffect == componentDidMount+componentDidUpdate<br/>
+- 2 屏蔽 componentDidUpdate，可将传入第二个参为空数组<br/>
+- 3 实现 shouldComponentUpdate 效果，可将第二个参数设置为[数据]<br/>
+- 4 实现 componentWillUnMount 效果，useEffect 中 return 函数<br/>
+
+```jsx
+improt {useEffect} from 'react'
+const APP = () =>{
+    let [num,setNum] = useState(0)
+  //1默认情况下
+  useEffect(()=>{
+    console.log('useEffect')
+  })
+  //2屏蔽componentDidUpdate
+  useEffect(()=>{
+    console.log('useEffect')
+  },[])
+   //3实现shouldComponentUpdate效果
+  useEffect(()=>{
+    console.log('num++')
+  },[num])
+
+    //4实现shouldComponentUpdate效果
+  useEffect(()=>{
+    console.log('useEffect')
+    return ()=>{
+      console.log('status clear')
+    }
+  })
+  return(
+    <div>{num}
+    <button onClick={(e)=>setNum(num+1)}>add</button>
+    </div>
+  )
+}
+export default App
+```
+
+### 自定义 hook -- custom hook
+
+> 实现组件的公共功能
+
+```jsx
+improt {useEffect} from 'react'
+//更改页面title
+const useTitleHook = title => {
+  useEffect(() => {
+    document.title = title
+    return () => {
+      document.title = '默认title'
+    }
+  })
+}
+```
+
+::: tip
+
+## Typescript
+
+:::
+
+### Typescript 的出现原因
+
+- 解决 Javascript 代码不规范的问题
+- 解决 js 项目中协同及维护效率偏低的问题
+
+### 概念
+
+TS 是 JS 的一个超集，主要提供了类型系统和对 ES6 的支持
+
+### 使用场景
+
+生命周期较长，较稳定的大型项目
+
+### 语法
+
+- 变量声明
+
+```TS
+//布尔值
+let isDone: boolean = false;
+//任意类型
+let a: any = '1';
+//联合类型-不推荐
+let a: string | number;
+//接口-定义对象
+interface Person {
+  name: string;
+  age: number
+}
+let xiaoming: Peron = {
+  name:'小明',
+  age:22
+};
+//数组-不推荐
+let nums: number[] = [1,2,3,4];
+//数组-推荐
+let nums: Array<number> = [1,2,3,4,5];
+//方法
+function sum(x: number , y: number){
+  return x + y
+}
+sum(x:1,y:2)
+```
