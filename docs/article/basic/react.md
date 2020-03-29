@@ -490,6 +490,38 @@ const useTitleHook = title => {
   })
 }
 ```
+### redux hook
+
+> 实现redux功能
+
+```jsx
+improt {useReducer} from 'react'
+const initialState = { count: 1}
+
+function reducer (state, action){
+  swith(acion.type){
+    case 'reset':
+      return initialState
+    case 'add':
+      return {count : state.count + 1}
+    case 'sub':
+      return {count : state.count - 1}
+    default:
+      return state
+  }
+}
+function Counter({initialState}){
+  const [state,dispatch] = useReducer(reducer,initialState)
+  return(
+    <div>
+        count:{state.count}
+        <button onClick={()=>dispatch({type:'reset'})}>reset</button>
+        <button onClick={()=>dispatch({type:'add'})}>add</button>
+        <button onClick={()=>dispatch({type:'sub'})}>sub</button>
+    </div>
+  )
+}
+```
 
 ::: tip
 
@@ -547,6 +579,7 @@ sum(x:1,y:2)
 
 ```TS
 import * as React from 'react;
+//state props
 interface IProps{
   name:string
 }
@@ -566,20 +599,29 @@ class App extends React.Component<IProps,IState>{
     return (
       <div>
        hello TS {name} {value}
+       //dom事件
        <input value={this.state.value} onChange ={(e:ChangeEvent<HTMLInputElement>)=>{
          this.setState(state:{
            value:e.target.value
          })
        }} />
+        //dom事件
        <button onClick = {(e:React.MouseEvent<HTMLButtonEvent>)=>{
          alert('hello')
        }}>btn</button>
       </div>
     )
   }
-  public componentDidMount:(){
+  //生命周期
+  public componentDidMount(){
     console.log('mounted')
   }
 }
 export default App
 ```
+::: tip
+
+## Redux
+
+:::
+> Redux是数据管理框架,经常搭配react使用

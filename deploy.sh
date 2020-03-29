@@ -28,7 +28,7 @@ set -e
 
 git add .
 
-git commit -m "TS"
+git commit -m "h5"
 
 git push
 

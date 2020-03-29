@@ -1,8 +1,24 @@
 
 
 # HTML
-> ### [你真的了解回流和重绘吗](https://github.com/chenjigeng/blog/blob/master/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BA%86%E8%A7%A3%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98%E5%90%97.md)
+> ### 推荐阅读
+>  - [你真的了解回流和重绘吗](https://github.com/chenjigeng/blog/blob/master/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BA%86%E8%A7%A3%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98%E5%90%97.md)
 
-特别好的文章，图文并茂讲解了DOM渲染过程，回流、重绘的概念。以及如何优化
-- 回流：DOM节点在渲染前，需要计算渲染树各DOM节点在设备视口(viewport)内的确切位置和大小。这个计算阶段就是回流。
-- 重绘：通过构造渲染树和回流阶段，我们知道了哪些节点是可见的，以及可见节点的样式和具体的几何信息(位置、大小)，那么我们就可以将渲染树的每个节点都转换为屏幕上的实际像素，这个阶段就叫做重绘节点。
+::: tip
+
+## HTML5
+
+:::
+
+### HTML5简介
+- 广义的HTML5是指包括HTML,CSS,JS在内的一套技术组合
+- 主要作用(事实上就是通过2来实现1)
+   * 1.减少网页浏览器对插件的依赖。例如 Adobe Flash
+   * 2.提供更多能有效加强网络应用的标准集
+- 狭义HTML5的目的是在移动设备上支持多媒体，主要添加了以下新特性：
+   * 引入新的多媒体元素：如video audio
+   * 引进图形绘制： canvas
+   * 引进新的语义化标签(便于seo)： footer article aside nav等
+   * 引入新的表单控件：calendar data time email url search等
+   * Web存储功能
+   * 拖拽释放功能

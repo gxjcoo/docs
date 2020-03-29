@@ -1,1 +1,7 @@
 # VUE
+
+::: tip
+
+## vue-router
+
+:::
