@@ -391,10 +391,10 @@ export default Icon;
 
 :::
 
-> useState -- state<br/>
-> useEffect -- 生命周期<br/>
-> useReducer -- redux<br/>
-> custom hook -- 自定义 hook<br/>
+> useState -- state <br/>
+> useEffect -- 生命周期 <br/>
+> useReducer -- redux <br/>
+> custom hook -- 自定义 hook <br/>
 
 ### 函数式组件
 
@@ -490,9 +490,10 @@ const useTitleHook = title => {
   })
 }
 ```
+
 ### redux hook
 
-> 实现redux功能
+> 实现 redux 功能
 
 ```jsx
 improt {useReducer} from 'react'
@@ -572,9 +573,11 @@ function sum(x: number , y: number){
 }
 sum(x:1,y:2)
 ```
-### react中使用TS
+
+### react 中使用 TS
+
 - state props
-- dom事件
+- dom 事件
 - 生命周期
 
 ```TS
@@ -619,9 +622,11 @@ class App extends React.Component<IProps,IState>{
 }
 export default App
 ```
+
 ::: tip
 
 ## Redux
 
 :::
-> Redux是数据管理框架,经常搭配react使用
+
+> Redux 是数据管理框架,经常搭配 react 使用
