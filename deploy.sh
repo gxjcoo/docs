@@ -28,7 +28,7 @@ set -e
 
 git add .
 
-git commit -m "h5+wx入门"
+git commit -m "js even loop"
 
 git push
 
