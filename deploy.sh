@@ -28,7 +28,7 @@ set -e
 
 git add .
 
-git commit -m "vue基础"
+git commit -m "js面试题"
 
 git push
 
