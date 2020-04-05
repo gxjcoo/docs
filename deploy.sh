@@ -28,7 +28,7 @@ set -e
 
 git add .
 
-git commit -m "js even loop"
+git commit -m "vue基础"
 
 git push
 
