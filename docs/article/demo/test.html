@@ -13,12 +13,63 @@
   <li>3</li>
   <li>4</li>
   <li>5</li>
+
  </ul>
  <script>
+/********************************/
+/**********阻止事件的触发*********/
+/****防抖--执行最后的事件触发******/
+/**********返回最后的事件*********/
+/********************************/
+let test1 = function(){
+function debounce(callback,delay=300){
+ let t = null;
+ return function(e){
+  //清理上次的事件回调(无论是否执行)
+  clearTimeout(t)
+  //返回新的回调
+  t = setTimeout(()=>{
+   callback.call(e)
+  },delay)
+ }
+}
+window.onscroll = debounce(function(){
+ console.log('防抖')
+})
+}
+// test1()
+/********************************/
+/**********阻止事件的触发*********/
+/******节流--降低执行频率*********/
+/*******返回规定事件内的事件******/
+/********************************/
+var test2 = function(){
+ function throttle(callback,duration = 500){
+  var lasttime = new Date().getTime();
+  return function(e){
+   var now = new Date().getTime();
+   if(now-lasttime>duration){
+    lasttime = now;
+    callback.call(e)
+   }
+  }
+ }
+   window.onscroll = throttle(function(){
+   console.log('节流')
+  })
+ }
+// test2()
+
+    /********************************/
+/***************事件代理*************/
+/********************************/
   let ul = document.querySelector('#ul')
    ul.addEventListener('click', (event) => {
    console.log(event.target);
   })
+   
+
+
  </script>
 </body>
 </html>

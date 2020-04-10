@@ -1,4 +1,9 @@
-setTimeout(()=>{
+/********************************/
+/***********异步实现机制1**********/
+/********************************/
+
+function test1(){ 
+ setTimeout(()=>{
  console.log('set1')
 })
 new Promise((resolve)=>{
@@ -8,6 +13,8 @@ new Promise((resolve)=>{
  console.log(res)
 })
 console.log(1)
+}
+// test1()
 //代码第一次顺序执行后，打印p1,1
 //此时，宏任务队列：setTimeout
 //此时，微任务队列：then
@@ -15,8 +22,10 @@ console.log(1)
 //执行宏任务队列代码 ，打印set1
 //打印结果：p1 1 then1 set1
 
-
-
+/********************************/
+/***********异步实现机制2**********/
+/********************************/
+function test2(){ 
 setTimeout(()=>{
  console.log('set1')
  new Promise((res)=>{
@@ -45,6 +54,8 @@ new Promise((res)=>{
 }).then(()=>{
  console.log('then3')
 })
+}
+// test2()
 //代码第一次顺序执行后，打印pr1,2
 //此时，宏任务队列：[setTimeout(set1),setTimeout(set2)]
 //此时，微任务队列：[Promise(then1),Promise(then3)]
@@ -62,3 +73,6 @@ new Promise((res)=>{
 //宏任务执行后，宏任务队列：[]
 //宏任务执行后，微任务队列：[]
 //执行结束。顺序依次是pr1-2-then1-then3-set1-then2-then4-set2
+
+
+ 

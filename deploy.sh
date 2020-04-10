@@ -28,7 +28,7 @@ set -e
 
 git add .
 
-git commit -m "项目优化相关"
+git commit -m "面试题demo"
 
 git push
 
