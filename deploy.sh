@@ -28,7 +28,7 @@ set -e
 
 git add .
 
-git commit -m "面试题demo"
+git commit -m "vueSSR服务端渲染"
 
 git push
 
