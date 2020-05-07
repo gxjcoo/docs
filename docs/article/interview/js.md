@@ -104,3 +104,89 @@ JSONP 的原理很简单，就是利⽤script标签没有跨域限制的漏洞�
 事件代理的⽅式相对于直接给⽬标注册事件来说，有以下优点
 - 节省内存
 - 不需要给⼦节点注销事件
+
+::: tip
+
+#### 作用域和值的类型
+
+:::
+```js
+function Person(name){
+  this.name = name;
+}
+function f1(person){
+  console.log(person)//这时person === 形参(p)
+  person.name = 'ls'//这时person === 形参(p)
+  person = new Person('aa') // 栈中新创建了个person,并且堆中有了新的实例
+  console.log(person)//这时person !== 形参(p)
+
+}
+var p = new Person('zs')
+console.log(p.name)
+f1(p)
+console.log(p.name)
+```
+
+::: tip
+
+#### 下划线命名转转驼峰命名
+
+:::
+```js
+let fileName = 'get_element_by_id'
+function fn(str){
+  let tempArr = str.split('_').map((item,index)=>index==0?item:item.charAt(0).toUpperCase()+item.substr(1,item.length-1));
+return tempArr.join('')
+}
+let newFileName = fn(fileName)
+console.log(newFileName)
+
+```
+
+::: tip
+
+#### 反转数组
+
+:::
+```js
+
+let nums = [1,2,3,4,5,6,7,8]
+let arrReverse = function(arr){
+  let tempArr = new Array(arr.length);
+  arr.forEach((item,index)=>{
+    tempArr[arr.length-index-1] = item
+  })
+  return tempArr
+}
+let reNums = arrReverse(nums)
+console.log(reNums)
+
+
+```
+
+::: tip
+
+#### 数组排序
+
+:::
+```js
+
+```
+
+::: tip
+
+#### 
+
+:::
+```js
+
+```
+
+::: tip
+
+#### 
+
+:::
+```js
+
+```
